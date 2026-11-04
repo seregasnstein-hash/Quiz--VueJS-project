@@ -1,23 +1,40 @@
-# Quiz
+# QuizMaster
 
-This template should help get you started developing with Vue 3 in Vite.
+QuizMaster - это приложение с тестами по веб-разработке
 
-## Recommended IDE Setup
+## О проекте
+В приложении можно будет пройти тесты по направлениям:
+- JavaScript
+- HTML и CSS
+- Vue.js и React
+- Node.js
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Пользователь может выбрать тему из списка и проверить свои знания.
 
-## Recommended Browser Setup
+## Используемые технологии
+- HTML
+- CSS
+- JavaScript
+- Vue 3
+- Vue Router
+- Vite
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Что уже сделано
+- Выбрана тема.
+- Создан Vue-проект.
+- Настроена навигация между страницами
+- Создан header
+- Создан компонент карточки
+- Добавлены карточки на главную страницу с темами 
+- Добавлены стили на главную страницу и карточки
+- Добавлена адаптивность
 
-## Customize configuration
+## Что планируется
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Добавление самих тестов
+- Реализовать подсчет правильных ответов и вывод результатов
+- Создание серверной части с использованием Node.js & Express
+- Может быть подключение Mongoose, но это не точно
 
 ## Project Setup
 

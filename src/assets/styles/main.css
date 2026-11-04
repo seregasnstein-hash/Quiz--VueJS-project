@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #151521;
+    color: #f5f5fa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    cursor: pointer;
+    font-family: inherit;
+}
+.app{
+    min-height: 100vh;
+}
+
+.main_content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
