@@ -13,7 +13,7 @@ defineProps({
       <span class="category">{{ quiz.category }}</span>
       <h3>{{ quiz.title }}</h3>
       <p>{{ quiz.description }}</p>
-      <span class="questions-count">Кол-во вопросов: {{ quiz.questionsCount }}</span>
+      <span class="questions_count">Кол-во вопросов: {{ quiz.questionsCount }}</span>
     </div>
     <RouterLink :to="`/quiz/${quiz.id}`" class="start_button">
       Начать тест

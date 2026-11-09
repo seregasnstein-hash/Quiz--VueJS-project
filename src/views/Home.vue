@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import QuizCard from "@/components/QuizCard.vue";
 const quizzes = [
   {
