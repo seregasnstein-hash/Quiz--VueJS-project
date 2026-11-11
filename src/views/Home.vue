@@ -17,9 +17,9 @@ const quizzes = [
   },
   {
     id: 3,
-    title: "Vue.js и React",
+    title: "Vue.js",
     category: "Фреймворки",
-    description: "Проверь, шаришь ли ты в Vue.js и React",
+    description: "Проверь, шаришь ли ты в Vue.js",
     questionsCount: 10,
   },
   {
