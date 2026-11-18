@@ -1,7 +1,9 @@
+
 const quizzes = [
   {
     id: 1,
     title: "JavaScript",
+    language: 'javascript',
     description: "Вопросы на тему JavaScript",
     questions: [
       {
@@ -9,14 +11,14 @@ const quizzes = [
         subQuestion: "Каков будет результат выполнения следующего кода?",
 
         question: `function checkScope() {
-                    if (true) {
-                        var x = 10;
-                        let y = 20;
-                    }
-                     console.log(x);
-                     console.log(y);
-                    }
-                   checkScope()`,
+ if (true) {
+   var x = 10;
+   let y = 20;
+ }
+console.log(x);
+console.log(y);
+}
+checkScope();`,
         options: [
           "Выведет 10, а затем 20",
           "Выведет 10, а затем вызовет ошибку ReferenceError: y is not defined",
@@ -32,7 +34,7 @@ const quizzes = [
         subQuestion: "Каков будет результат выполнения следующего кода?",
 
         question: `console.log(typeof null);
-                   console.log([1, 2] == '1,2');`,
+console.log([1, 2] == '1,2');`,
         options: [
           "null и false",
           "object и false",
@@ -48,19 +50,19 @@ const quizzes = [
         subQuestion: "Каков будет результат выполнения следующего кода?",
 
         question: `function createCounter() {
-                    let count = 0;
-                     return function() {
-                        count++;
-                        return count;
-                     };
-                    }
+ let count = 0;
+  return function() {
+     count++;
+     return count;
+  };
+ }
 
-                   const counter1 = createCounter();
-                   const counter2 = createCounter();
+const counter1 = createCounter();
+const counter2 = createCounter();
 
-                   counter1();
-                   console.log(counter1());
-                   console.log(counter2());`,
+counter1();
+console.log(counter1());
+console.log(counter2());`,
         options: [
           "Выведет 2, а затем 2",
           "Выведет NaN, а затем NaN",
@@ -75,17 +77,17 @@ const quizzes = [
         id: 4,
         subQuestion: "Каков будет результат выполнения следующего кода?",
         question: `const user = {
-                   name: 'Алексей',
-                        greetNormal: function() {
-                            console.log(this.name);
-                        },
-                   greetArrow: () => {
-                        console.log(this.name);
-                        }
-                    };
+  name: 'Алексей',
+  greetNormal: function() {
+  console.log(this.name);
+},
+greetArrow: () => {
+    console.log(this.name);
+  }
+};
 
-                   user.greetNormal();
-                   user.greetArrow();`,
+user.greetNormal();
+user.greetArrow();`,
         options: [
           "Выведет Алексей, а затем Алексей",
           "Выведет Алексей, а затем undefined (или пустую строку в браузере)",
@@ -102,15 +104,15 @@ const quizzes = [
           "В каком порядке выведутся числа в консоли при выполнении следующего кода?",
         question: `console.log(1);
 
-                   setTimeout(() => {
-                     console.log(2);
-                   }, 0);
+setTimeout(() => {
+  console.log(2);
+}, 0);
 
-                   Promise.resolve().then(() => {
-                     console.log(3);
-                   });
+Promise.resolve().then(() => {
+  console.log(3);
+});
 
-                  console.log(4);`,
+console.log(4);`,
         options: ["1, 4, 3, 2", "1, 2, 3, 4", "1, 4, 2, 3", "1, 3, 4, 2"],
         correctAnswer: 0,
         description:
@@ -120,9 +122,9 @@ const quizzes = [
         id: 6,
         subQuestion: "Каков будет результат выполнения следующего кода?",
         question: `console.log(a);
-                   var a = 5;
-                   console.log(b);
-                   let b = 10;`,
+var a = 5;
+console.log(b);
+let b = 10;`,
         options: [
           "Выведет undefined, а затем 10",
           "Вызовет ошибку ReferenceError на первой строке",
@@ -137,9 +139,9 @@ const quizzes = [
         id: 7,
         subQuestion: "Что выведет в консоль следующий код?",
         question: `const a = { count: 1 };
-                   const b = a;
-                   b.count = 2;
-                   console.log(a.count);`,
+const b = a;
+b.count = 2;
+console.log(a.count);`,
         options: [
           "1",
           "2",
@@ -154,10 +156,10 @@ const quizzes = [
         id: 8,
         subQuestion: "Каков будет результат выполнения следующего кода?",
         question: `const nums = [1, 2, 3, 4];
-                   const result = nums
-                    .filter(n => n % 2 === 0)
-                    .map(n => n * 10);
-                   console.log(result);`,
+const result = nums
+ .filter(n => n % 2 === 0)
+ .map(n => n * 10);
+console.log(result);`,
         options: ["[10, 20, 30, 40]", "[20, 40]", "[2, 4]", "[10, 30]"],
         correctAnswer: 1,
         description:
@@ -176,8 +178,8 @@ const quizzes = [
         id: 10,
         subQuestion: "Каков будет результат выполнения следующего кода?",
         question: `const person = { name: 'Иван', age: 25 };
-                   const { name: userName, city = 'Алматы' } = person;
-                   console.log(userName, city);`,
+const { name: userName, city = 'Алматы' } = person;
+console.log(userName, city);`,
         options: [
           "Иван undefined",
           "undefined Алматы",
@@ -194,17 +196,18 @@ const quizzes = [
   {
     id: 2,
     title: "HTML и CSS",
+    language: "css",
     description: "Вопросы на тему верстки, семантики и стилей",
     questions: [
       {
         id: 1,
         subQuestion: "Какой ширины в итоге окажется блок на странице?",
         question: `.box {
-                    box-sizing: border-box;
-                    width: 200px;
-                    padding: 20px;
-                    border: 5px solid black;
-                   }`,
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}`,
         options: ["200px", "250px", "240px", "225px"],
         correctAnswer: 0,
         description:
@@ -214,14 +217,14 @@ const quizzes = [
         id: 2,
         subQuestion: "Какого цвета будет текст внутри параграфа?",
         question: `/* CSS */
-                   #main p { color: blue; }
-                   .content .text { color: green; }
-                   p.text { color: red; }
+#main p { color: blue; }
+.content .text { color: green; }
+p.text { color: red; }
 
-                   /* HTML */
-                   <div id="main" class="content">
-                     <p class="text">Привет, мир!</p>
-                   </div>`,
+/* HTML */
+<div id="main" class="content">
+  <p class="text">Привет, мир!</p>
+</div>`,
         options: [
           "Синего (blue)",
           "Зеленого (green)",
@@ -236,13 +239,13 @@ const quizzes = [
         id: 3,
         subQuestion: "Как расположится элемент с классом .child на экране?",
         question: `.parent {
-                     position: relative;
-                   }
-                   .child {
-                     position: absolute;
-                     top: 0;
-                     right: 0;
-                   }`,
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}`,
         options: [
           "В правом верхнем углу экрана (окна браузера)",
           "В левом верхнем углу блока .parent",
@@ -258,9 +261,9 @@ const quizzes = [
         subQuestion:
           "Какое расстояние по вертикали будет между двумя соседними абзацами?",
         question: `p {
-                     margin-top: 20px;
-                     margin-bottom: 30px;
-                   }`,
+  margin-top: 20px;
+  margin-bottom: 30px;
+}`,
         options: ["50px", "30px", "20px", "10px"],
         correctAnswer: 1,
         description:
@@ -270,11 +273,11 @@ const quizzes = [
         id: 5,
         subQuestion: "Как будут выровнены дочерние элементы внутри контейнера?",
         question: `.container {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-end;
-                  }`,
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-end;
+}`,
         options: [
           "По центру по вертикали и прижаты к правому краю",
           "По центру по горизонтали и прижаты к низу",
@@ -290,10 +293,10 @@ const quizzes = [
         subQuestion:
           "Какой тег лучше всего использовать для оборачивания основного уникального содержимого страницы?",
         question: `<body>
-                     <header>...</header>
-                     <!-- Какой тег здесь? -->
-                     <footer>...</footer>
-                   </body>`,
+  <header>...</header>
+  <!-- Какой тег здесь? -->
+  <footer>...</footer>
+</body>`,
         options: ["<section>", "<article>", "<main>", "<content>"],
         correctAnswer: 2,
         description:
@@ -304,10 +307,10 @@ const quizzes = [
         subQuestion:
           "Сколько колонок создаст следующая сетка CSS Grid и какой ширины?",
         question: `.grid {
-                     display: grid;
-                     grid-template-columns: 100px 1fr 2fr;
-                     width: 400px;
-                   }`,
+  display: grid;
+  grid-template-columns: 100px 1fr 2fr;
+  width: 400px;
+}`,
         options: [
           "3 колонки: 100px, 100px и 200px",
           "3 колонки: 100px, 150px и 150px",
@@ -323,10 +326,10 @@ const quizzes = [
         subQuestion:
           "Что произойдет при попытке задать ширину и высоту строчному элементу?",
         question: `span {
-                    display: inline;
-                    width: 200px;
-                    height: 100px;
-                  }`,
+ display: inline;
+ width: 200px;
+ height: 100px;
+}`,
         options: [
           "Элемент станет размером 200 на 100 пикселей",
           "Элемент автоматически переключится на display: inline-block",
@@ -341,8 +344,8 @@ const quizzes = [
         id: 9,
         subQuestion: "Чему будет равен размер шрифта у элемента .text?",
         question: `html { font-size: 16px; }
-                  .parent { font-size: 20px; }
-                  .text { font-size: 1.5rem; }`,
+.parent { font-size: 20px; }
+.text { font-size: 1.5rem; }`,
         options: ["30px", "24px", "16px", "20px"],
         correctAnswer: 1,
         description:
@@ -364,6 +367,7 @@ const quizzes = [
   {
     id: 3,
     title: "Vue.js",
+    language: 'javascript',
     description:
       "Вопросы по реактивности, директивам и жизненному циклу во Vue 3",
     questions: [
@@ -372,11 +376,11 @@ const quizzes = [
         subQuestion:
           "Как правильно изменить значение реактивной переменной, созданной через ref, внутри тега <script setup>?",
         question: `<script setup>
-                  import { ref } from 'vue';
+import { ref } from 'vue';
 
-                  const count = ref(0);
-                  // Как увеличить count на 1?
-                  </script>`,
+const count = ref(0);
+// Как увеличить count на 1?
+</script>`,
         options: [
           "count.value++",
           "count++",
@@ -392,7 +396,7 @@ const quizzes = [
         subQuestion:
           "В чем главное отличие директивы v-if от директивы v-show?",
         question: `<div v-if="isVisible">Блок 1</div>
-                   <div v-show="isVisible">Блок 2</div>`,
+<div v-show="isVisible">Блок 2</div>`,
         options: [
           "Никакого отличия нет, это синонимы",
           "v-if удаляет элемент из DOM-дерева, а v-show скрывает его через CSS (display: none)",
@@ -409,9 +413,9 @@ const quizzes = [
           "Что произойдет при попытке деструктурировать объект, созданный через reactive()?",
         question: `import { reactive } from 'vue';
 
-                   const state = reactive({ count: 0, name: 'Vue' });
-                   let { count } = state;
-                   count++;`,
+const state = reactive({ count: 0, name: 'Vue' });
+let { count } = state;
+count++;`,
         options: [
           "Значение state.count обновится до 1, интерфейс перерисуется",
           "Vue выбросит ошибку компиляции",
@@ -427,8 +431,8 @@ const quizzes = [
         subQuestion:
           "В чем ключевое преимущество вычисляемых свойств (computed) перед обычными методами в шаблоне?",
         question: `const fullName = computed(() => {
-                     return firstName.value + ' ' + lastName.value;
-                   });`,
+  return firstName.value + ' ' + lastName.value;
+});`,
         options: [
           "computed может принимать аргументы напрямую из шаблона",
           "computed работает асинхронно по умолчанию",
@@ -444,10 +448,10 @@ const quizzes = [
         subQuestion:
           "Для чего необходимо указывать уникальный атрибут :key при использовании директивы v-for?",
         question: `<ul>
-                     <li v-for="item in items" :key="item.id">
-                       {{ item.text }}
-                     </li>
-                   </ul>`,
+  <li v-for="item in items" :key="item.id">
+    {{ item.text }}
+  </li>
+</ul>`,
         options: [
           "Без него код не скомпилируется в браузере",
           "Он помогает алгоритму Virtual DOM точно отслеживать каждый узел при изменении порядка или удалении элементов",
@@ -463,9 +467,9 @@ const quizzes = [
         subQuestion:
           "В каком хуке жизненного цикла Composition API компонент уже смонтирован и можно безопасно обратиться к его DOM-элементам?",
         question: `<script setup>
-                    import { onMounted } from 'vue';
-                    // ...
-                   </script>`,
+ import { onMounted } from 'vue';
+ // ...
+</script>`,
         options: ["onMounted", "onBeforeMount", "onCreated", "onUpdated"],
         correctAnswer: 0,
         description:
@@ -475,8 +479,8 @@ const quizzes = [
         id: 7,
         subQuestion: "Что делает модификатор .prevent в обработчике событий?",
         question: `<form @submit.prevent="onSubmit">
-                     <button type="submit">Отправить</button>
-                   </form>`,
+  <button type="submit">Отправить</button>
+</form>`,
         options: [
           "Останавливает всплытие события (event.stopPropagation())",
           "Позволяет обработчику сработать только один раз",
@@ -492,9 +496,9 @@ const quizzes = [
         subQuestion:
           "Как в Vue 3 принято передавать данные от дочернего компонента обратно к родительскому?",
         question: `<!-- Дочерний компонент -->
-                   <script setup>
-                   const emit = defineEmits(['update']);
-                   </script>`,
+<script setup>
+const emit = defineEmits(['update']);
+</script>`,
         options: [
           "Напрямую мутировать входной параметр (prop)",
           "Сгенерировать пользовательское событие через функцию emit('update', data)",
@@ -509,8 +513,8 @@ const quizzes = [
         id: 9,
         subQuestion: "В чем разница между функциями watch и watchEffect?",
         question: `watchEffect(() => {
-                     console.log(userId.value);
-                   });`,
+  console.log(userId.value);
+});`,
         options: [
           "watchEffect автоматически отслеживает все реактивные зависимости внутри себя и запускается сразу при создании",
           "watch работает только с примитивами, а watchEffect — только с объектами",
@@ -526,9 +530,9 @@ const quizzes = [
         subQuestion:
           "Какой встроенный компонент Vue позволяет отрендерить часть шаблона в другом месте DOM-дерева (например, модальное окно внутри <body>)?",
         question: `<template>
-                     <!-- Какой тег нужно использовать? -->
-                     <div class="modal">Модальное окно</div>
-                   </template>`,
+  <!-- Какой тег нужно использовать? -->
+  <div class="modal">Модальное окно</div>
+</template>`,
         options: [
           "<Portal>",
           '<Teleport to="body">',
@@ -545,6 +549,7 @@ const quizzes = [
   {
     id: 4,
     title: "Node.js",
+    language: 'javascript',
     description:
       "Вопросы по архитектуре, асинхронности, модулям и встроенным API в Node.js",
     questions: [
@@ -553,9 +558,9 @@ const quizzes = [
         subQuestion:
           "В каком порядке выведутся сообщения в консоли при выполнении следующего кода в Node.js?",
         question: `setTimeout(() => console.log('timeout'), 0);
-                   setImmediate(() => console.log('immediate'));
-                   process.nextTick(() => console.log('nextTick'));
-                   console.log('sync');`,
+setImmediate(() => console.log('immediate'));
+process.nextTick(() => console.log('nextTick'));
+console.log('sync');`,
         options: [
           "sync, nextTick, timeout, immediate",
           "sync, timeout, immediate, nextTick",
@@ -571,7 +576,7 @@ const quizzes = [
         subQuestion:
           "Что выведет в консоль следующий код внутри обычного CommonJS-модуля в Node.js?",
         question: `console.log(this === module.exports);
-                   console.log(this === global);`,
+console.log(this === global);`,
         options: [
           "false и true",
           "true и true",
@@ -587,8 +592,8 @@ const quizzes = [
         subQuestion:
           "В чем главное преимущество использования потоков (Streams) при чтении большого файла в Node.js?",
         question: `const fs = require('fs');
-                   const readStream = fs.createReadStream('huge-video.mp4');
-                   readStream.pipe(res);`,
+const readStream = fs.createReadStream('huge-video.mp4');
+readStream.pipe(res);`,
         options: [
           "Потоки сжимают файл перед отправкой клиенту",
           "Потоки автоматически кэшируют файл на диске",
@@ -604,7 +609,7 @@ const quizzes = [
         subQuestion:
           "Как получить аргументы командной строки, переданные при запуске скрипта node app.js --port=3000?",
         question: `// Запуск: node app.js --port=3000
-                   console.log(/* что нужно написать? */);`,
+console.log(/* что нужно написать? */);`,
         options: [
           "process.env.ARGS",
           "process.argv",
@@ -620,10 +625,10 @@ const quizzes = [
         subQuestion:
           "В чем разница между экспортами в CommonJS (module.exports) и ES-модулях (export default)?",
         question: `// CommonJS
-                   module.exports = { a: 1 };
+module.exports = { a: 1 };
 
-                   // ES Modules
-                   export default { a: 1 };`,
+// ES Modules
+export default { a: 1 };`,
         options: [
           "CommonJS загружается синхронно во время выполнения, а ES-модули поддерживают статический анализ и асинхронную загрузку",
           "ES-модули работают только в браузере и не поддерживаются в Node.js",
@@ -638,7 +643,7 @@ const quizzes = [
         id: 6,
         subQuestion: "Для чего в Node.js используется встроенный класс Buffer?",
         question: `const buf = Buffer.from('Привет', 'utf-8');
-                   console.log(buf);`,
+console.log(buf);`,
         options: [
           "Для кэширования HTTP-запросов в памяти",
           "Для прямой работы с бинарными данными и потоками байтов вне кучи V8",
@@ -654,9 +659,9 @@ const quizzes = [
         subQuestion:
           "Что произойдет, если в объекте EventEmitter сгенерировать событие 'error', на которое не подписан ни один обработчик?",
         question: `const EventEmitter = require('events');
-                   const emitter = new EventEmitter();
+const emitter = new EventEmitter();
 
-                   emitter.emit('error', new Error('Что-то пошло не так'));`,
+emitter.emit('error', new Error('Что-то пошло не так'));`,
         options: [
           "Событие будет молча проигнорировано",
           "Ошибка автоматически запишется в файл error.log",
@@ -671,7 +676,7 @@ const quizzes = [
         id: 8,
         subQuestion: "За что отвечает библиотека libuv в архитектуре Node.js?",
         question: `// Стек технологий Node.js:
-                   // JavaScript -> V8 -> Node.js Bindings -> libuv`,
+// JavaScript -> V8 -> Node.js Bindings -> libuv`,
         options: [
           "За компиляцию JavaScript-кода в машинный код",
           "За управление пакетами и зависимостями в node_modules",
@@ -687,7 +692,7 @@ const quizzes = [
         subQuestion:
           "Какой встроенный модуль позволяет запустить дочерние копии Node.js-приложения на всех ядрах процессора для распределения входящего трафика?",
         question: `const cluster = require('cluster');
-                   const numCPUs = require('os').availableParallelism();`,
+const numCPUs = require('os').availableParallelism();`,
         options: [
           "Модуль cluster",
           "Модуль path",
@@ -703,8 +708,8 @@ const quizzes = [
         subQuestion:
           "Чем отличается метод path.join() от path.resolve() при работе с путями к файлам?",
         question: `const path = require('path');
-                   console.log(path.join('/a', '/b'));
-                   console.log(path.resolve('/a', '/b'));`,
+console.log(path.join('/a', '/b'));
+console.log(path.resolve('/a', '/b'));`,
         options: [
           "path.resolve работает только в Windows, а path.join — только в Linux",
           "path.join склеивает сегменты в относительный путь, а path.resolve всегда возвращает абсолютный путь от корня",

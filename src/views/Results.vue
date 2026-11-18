@@ -6,6 +6,6 @@ const userAnswers = JSON.parse(localStorage.getItem("userAnswers"));
 <template>
   <div>
     <h1>Результаты теста</h1>
-    {{ correctCount }}
+    <p>Правильных ответов: {{ correctCount }} из {{ userAnswers.length }}</p>
   </div>
 </template>
